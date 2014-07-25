@@ -3,6 +3,14 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <android.support.v7.widget.RecyclerView
+        android:scrollbars="vertical"
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
     <ImageButton
         android:id="@+id/fab_1"
         android:layout_alignParentBottom="true"
@@ -16,13 +24,5 @@
         android:src="@drawable/reply"
         android:elevation="10dp" />
 
-
-    <android.support.v7.widget.RecyclerView
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:scrollbars="vertical"
-        android:id="@+id/my_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </RelativeLayout>

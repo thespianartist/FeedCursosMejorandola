@@ -4,5 +4,6 @@
     <string name="app_name">Mejorando.la</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_course_detail">CourseDetailActivity</string>
 
 </resources>

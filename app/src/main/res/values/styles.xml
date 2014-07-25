@@ -9,10 +9,6 @@
         <item name="android:colorAccent">@color/accent</item>
 
 
-
-
-
-
     </style>
 
     <color name="primary_dark">#056f00</color>

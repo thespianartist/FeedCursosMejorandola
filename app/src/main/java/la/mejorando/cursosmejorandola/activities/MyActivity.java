@@ -1,10 +1,16 @@
-package la.mejorando.cursosmejorandola;
+package la.mejorando.cursosmejorandola.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.transition.ChangeTransform;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 
+import la.mejorando.cursosmejorandola.R;
 import la.mejorando.cursosmejorandola.fragments.CursosFragment;
 
 
@@ -12,6 +18,10 @@ public class MyActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        getWindow().setExitTransition(new Slide());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 

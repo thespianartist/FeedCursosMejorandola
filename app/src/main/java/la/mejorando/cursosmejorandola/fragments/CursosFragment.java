@@ -1,6 +1,5 @@
 package la.mejorando.cursosmejorandola.fragments;
 
-import android.animation.ValueAnimator;
 import android.app.Fragment;
 import android.graphics.Outline;
 import android.os.Bundle;
@@ -9,8 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ import la.mejorando.cursosmejorandola.utils.ReadLocalJSON;
 /**
  * Created by thespianartist on 23/07/14.
  */
-public class CursosFragment extends Fragment{
+public class CursosFragment extends Fragment {
 
 
     @Override
@@ -40,23 +39,28 @@ public class CursosFragment extends Fragment{
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+
         int size = getResources().getDimensionPixelSize(R.dimen.fab_size);
         Outline outline = new Outline();
         outline.setOval(0, 0, size, size);
+        ImageButton imageButton = (ImageButton) getActivity().findViewById(R.id.fab_1);
+        imageButton.setOutline(outline);
+        imageButton.setOnClickListener(new View.OnClickListener() {
 
-        View fabButton =  getActivity().findViewById(R.id.fab_1);
-        fabButton.setOutline(outline);
-
-
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"Comparte con tus amigos",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.cursos_fragment, container, false);
         return rootView;
     }
+
 
 }

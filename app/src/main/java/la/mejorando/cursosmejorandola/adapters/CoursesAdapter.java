@@ -1,7 +1,6 @@
 package la.mejorando.cursosmejorandola.adapters;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,22 +13,52 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import la.mejorando.cursosmejorandola.R;
+import la.mejorando.cursosmejorandola.activities.CourseDetailActivity;
 import la.mejorando.cursosmejorandola.models.Course;
 
 /**
  * Created by thespianartist on 24/07/14.
  */
-public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> implements AdapterView.OnItemClickListener {
-
+public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
 
     private ArrayList<Course> courses;
     private int itemLayout;
 
 
     public  CoursesAdapter(ArrayList<Course> data,  int itemLayout){
-
         courses = data;
         this.itemLayout = itemLayout;
+    }
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements AdapterView.OnClickListener {
+
+        public ImageView image;
+        public TextView name;
+        public TextView description;
+        public Integer  id;
+
+
+        public ViewHolder(View itemView) {
+
+            super(itemView);
+            itemView.setOnClickListener(this);
+            image = (ImageView) itemView.findViewById(R.id.image);
+            name = (TextView) itemView.findViewById(R.id.name);
+            description = (TextView) itemView.findViewById(R.id.description);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            String send = "onClick " + id  + "    "+ name.getText()+ description.getText();
+            Intent intent = new Intent(view.getContext(),CourseDetailActivity.class);
+            intent.putExtra(id.toString(),send);
+            view.getContext().startActivity(intent);
+
+        }
+
     }
 
 
@@ -40,7 +69,6 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
         return new ViewHolder(v);
     }
 
-
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
 
@@ -48,6 +76,7 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
 
         viewHolder.name.setText(course.getName());
         viewHolder.description.setText(course.getDescription());
+        viewHolder.id = courses.get(position).getId();
 
         switch (course.getId()){
             case 1:
@@ -68,9 +97,7 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
                 viewHolder.image.setImageResource(R.drawable.backend);
                 break;
         }
-
         viewHolder.itemView.setTag(course);
-
     }
 
 
@@ -88,27 +115,6 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
         int position = courses.indexOf(item);
         courses.remove(position);
         notifyItemRemoved(position);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(view.getContext(),"Hola Click", Toast.LENGTH_LONG).show();
-    }
-
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        public ImageView image;
-        public TextView name;
-        public TextView description;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-
-            image = (ImageView) itemView.findViewById(R.id.image);
-            name = (TextView) itemView.findViewById(R.id.name);
-            description = (TextView) itemView.findViewById(R.id.description);
-        }
     }
 
 
