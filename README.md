@@ -5,6 +5,8 @@ La aplicación simula un feed de los cursos de mejorando.la.
 Usaremos los dos nuevos widgets: CardView y RecyclerView,
 ademas de  un Float Button, todo siguiendo los principios  del nuevo material design.
 
+![alt tag](https://googledrive.com/host/0BwmHCEi7SqenR1hpNENFODFuR3M/mejorandoapp.jpg)
+
 Requiere tener instalado: 
 
         Android Studio Beta    
@@ -17,6 +19,7 @@ Requiere tener instalado:
         Gradle Version 0.12.+'
         
 Tutorial disponible en: *Trabajando en ello*
+
 
 
 
