@@ -13,7 +13,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import la.mejorando.cursosmejorandola.R;
-import la.mejorando.cursosmejorandola.activities.CourseDetailActivity;
 import la.mejorando.cursosmejorandola.models.Course;
 
 /**
@@ -30,41 +29,30 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
         this.itemLayout = itemLayout;
     }
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder implements AdapterView.OnClickListener {
 
         public ImageView image;
         public TextView name;
         public TextView description;
-        public Integer  id;
-
 
         public ViewHolder(View itemView) {
-
             super(itemView);
+
             itemView.setOnClickListener(this);
             image = (ImageView) itemView.findViewById(R.id.image);
             name = (TextView) itemView.findViewById(R.id.name);
             description = (TextView) itemView.findViewById(R.id.description);
-
         }
 
         @Override
         public void onClick(View view) {
-
-            String send = "onClick " + id  + "    "+ name.getText()+ description.getText();
-            Intent intent = new Intent(view.getContext(),CourseDetailActivity.class);
-            intent.putExtra(id.toString(),send);
-            view.getContext().startActivity(intent);
-
+            Toast.makeText(view.getContext(),"OnItemClick :D", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(itemLayout, viewGroup, false);
         return new ViewHolder(v);
     }
@@ -73,10 +61,8 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
 
         Course course = courses.get(position);
-
         viewHolder.name.setText(course.getName());
         viewHolder.description.setText(course.getDescription());
-        viewHolder.id = courses.get(position).getId();
 
         switch (course.getId()){
             case 1:
@@ -105,17 +91,5 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
     public int getItemCount() {
         return courses.size();
     }
-
-    public void add(Course item, int position) {
-        courses.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(Course item) {
-        int position = courses.indexOf(item);
-        courses.remove(position);
-        notifyItemRemoved(position);
-    }
-
 
 }

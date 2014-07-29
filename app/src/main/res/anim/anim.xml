@@ -3,7 +3,7 @@
         android:state_enabled="true"
         android:state_pressed="true">
         <objectAnimator
-            android:duration="@android:integer/config_shortAnimTime"
+            android:duration="500"
             android:propertyName="translationZ"
             android:valueFrom="@dimen/button_elevation"
             android:valueTo="@dimen/button_press_elevation"
@@ -11,7 +11,7 @@
     </item>
     <item>
         <objectAnimator
-            android:duration="@android:integer/config_shortAnimTime"
+            android:duration="500"
             android:propertyName="translationZ"
             android:valueFrom="@dimen/button_press_elevation"
             android:valueTo="@dimen/button_elevation"

@@ -43,12 +43,10 @@ public class ReadLocalJSON {
             bufferedReader.close();
             json = builder.toString();
 
-            Log.e("JSON", json);
 
             JSONArray jsonArray = new JSONArray(json);
 
             for (int index = 0; index < jsonArray.length(); index++) {
-
                 Course course = new Course();
                 JSONObject jsonObject = jsonArray.getJSONObject(index);
                 course.setId(jsonObject.getInt("id"));
@@ -66,9 +64,7 @@ public class ReadLocalJSON {
             Toast.makeText(c,"No se pudo obtener los datos",Toast.LENGTH_SHORT).show();
         }
 
-        Log.e("JSON", courses.toString());
         return courses;
-
     }
 
 

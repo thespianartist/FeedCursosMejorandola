@@ -20,7 +20,7 @@ import la.mejorando.cursosmejorandola.models.Course;
 import la.mejorando.cursosmejorandola.utils.ReadLocalJSON;
 
 /**
- * Created by thespianartist on 23/07/14.
+ * Created by thespianartist on 23/07/14. (: pufu!!!!!
  */
 public class CursosFragment extends Fragment {
 
@@ -49,7 +49,8 @@ public class CursosFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),"Comparte con tus amigos",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"Mejorando.la: Aprende a crear el futuro de la Web",
+                                            Toast.LENGTH_LONG).show();
             }
         });
 
