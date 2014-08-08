@@ -39,6 +39,7 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
             super(itemView);
 
             itemView.setOnClickListener(this);
+
             image = (ImageView) itemView.findViewById(R.id.image);
             name = (TextView) itemView.findViewById(R.id.name);
             description = (TextView) itemView.findViewById(R.id.description);
@@ -81,6 +82,10 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
 
             case 4:
                 viewHolder.image.setImageResource(R.drawable.backend);
+                break;
+
+            case 5:
+                viewHolder.image.setImageResource(R.drawable.servidores);
                 break;
         }
         viewHolder.itemView.setTag(course);

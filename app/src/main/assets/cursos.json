@@ -2,25 +2,32 @@
 		{
 			"id":1,
 			"name":"Curso de Diseño Web Online",
-			"description":"Aprende de los mejores con clases en vivo o cuando quieras, respuestas casi al instante y mucho más.Te entregamos certificado vivas donde vivas."
+			"description":"HTML5, CSS3, Javascript, diseño, animación, video y conexión a datos"
 
 		},
 		{
 			"id":2,
 			"name":"Programación en Android",
-			"description":"Aprende de los mejores con clases en vivo o cuando quieras, respuestas casi al instante y mucho más.Te entregamos certificado vivas donde vivas."
+			"description":"Crea apps nativas de alto impacto para Android, el sistema operativo móvil más usado del mundo."
 
 		},
 		{
 			"id":3,
 			"name":"Programación iOS usando swift",
-			"description":"Aprende de los mejores con clases en vivo o cuando quieras, respuestas casi al instante y mucho más.Te entregamos certificado vivas donde vivas."
+			"description":"Aprende desde cero, en la mejor plataforma online, a crear apps y juegos para iPhone y iPad."
 
 		},
 		{
 			"id":4,
 			"name":"Backend Profesional",
 			"description":"Aprende de los mejores con clases en vivo o cuando quieras, respuestas casi al instante y mucho más.Te entregamos certificado vivas donde vivas."
-		}
+		},
+
+		{
+        	"id":5,
+        	"name":"Curso de administracion de servidores Y devops",
+        	"description":"Aprende a administrar servers Linux, Heroku, AWS, Azure y desplegar web apps en Apache"
+
+       }
 ]
 

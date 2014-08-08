@@ -36,6 +36,7 @@ public class ReadLocalJSON {
             bufferedReader = new BufferedReader(new InputStreamReader(c.getAssets().open("cursos.json")));
 
             String line = "";
+
             while ((line=bufferedReader.readLine()) != null){
                 builder.append(line);
             }
