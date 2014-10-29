@@ -18,7 +18,7 @@ Requiere tener instalado:
         Android Support Repository 6
         Gradle Version 0.12.+'
         
-Tutorial disponible en: *Trabajando en ello*
+Tutorial disponible en: http://www.cristalab.com/tutoriales/introduccion-a-la-programacion-en-android-l-c113831l/
 
 
 
