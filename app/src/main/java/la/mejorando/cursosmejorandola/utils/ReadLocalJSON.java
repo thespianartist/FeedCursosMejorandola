@@ -49,6 +49,7 @@ public class ReadLocalJSON {
 
             for (int index = 0; index < jsonArray.length(); index++) {
                 Course course = new Course();
+
                 JSONObject jsonObject = jsonArray.getJSONObject(index);
                 course.setId(jsonObject.getInt("id"));
                 course.setName(jsonObject.getString("name"));

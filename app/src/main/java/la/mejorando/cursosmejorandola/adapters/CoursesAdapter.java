@@ -1,6 +1,5 @@
 package la.mejorando.cursosmejorandola.adapters;
 
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,10 +35,10 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
         public TextView description;
 
         public ViewHolder(View itemView) {
+
             super(itemView);
 
             itemView.setOnClickListener(this);
-
             image = (ImageView) itemView.findViewById(R.id.image);
             name = (TextView) itemView.findViewById(R.id.name);
             description = (TextView) itemView.findViewById(R.id.description);
@@ -53,9 +52,12 @@ public class CoursesAdapter  extends RecyclerView.Adapter<CoursesAdapter.ViewHol
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(itemLayout, viewGroup, false);
-        return new ViewHolder(v);
+    public ViewHolder onCreateViewHolder(ViewGroup  parent, int i) {
+
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
+        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
+        return viewHolder;
+
     }
 
     @Override
