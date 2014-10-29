@@ -47,6 +47,7 @@ public class CursosFragment extends Fragment {
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        
         //Por si quieren configurar algom como Grilla solo cambian la linea de arriba por esta:
         //recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
